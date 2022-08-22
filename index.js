@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/users", cartRouter);
 app.get("/" , (req, res) =>{
-    res.send("Welcome Paperless Backend API")
+    res.send("Welcome to Paperless Backend API")
 })
 
 

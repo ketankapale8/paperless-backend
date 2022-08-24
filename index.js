@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import userRouter from './routes/user.js';
 import cartRouter from './routes/cart.js';
-import addUserCart from './routes/userData.js'
+import usercartRouter from './routes/userData.js'
 import dotenv from "dotenv";
 // import { updateUser } from "./controllers/user.js";
 
@@ -18,7 +18,7 @@ app.use(cors());
 
 app.use("/users", userRouter);
 app.use("/users", cartRouter);
-app.use("/users" , addUserCart);
+app.use("/users" , usercartRouter);
 app.get("/" , (req, res) =>{
     res.send("Welcome to Paperless Backend API")
 })

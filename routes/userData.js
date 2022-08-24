@@ -3,7 +3,6 @@ import express from 'express';
 const router = express.Router();
 
 router.post('/addusercart' , addUserCart);
-// router.get('/allcarts', getAllCarts);
 
 
 export default router;

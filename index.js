@@ -4,7 +4,9 @@ import cors from 'cors';
 import morgan from 'morgan';
 import userRouter from './routes/user.js';
 import cartRouter from './routes/cart.js';
+import addUserCart from './routes/userData.js'
 import dotenv from "dotenv";
+// import { updateUser } from "./controllers/user.js";
 
 const app = express();
 dotenv.config();
@@ -16,6 +18,7 @@ app.use(cors());
 
 app.use("/users", userRouter);
 app.use("/users", cartRouter);
+app.use("/users" , addUserCart);
 app.get("/" , (req, res) =>{
     res.send("Welcome to Paperless Backend API")
 })
@@ -27,7 +30,7 @@ app.get("/" , (req, res) =>{
 const port = process.env.PORT || 5000;
 mongoose.connect(process.env.MONGO_DB_URL)
     .then(()=>{
-        app.listen(port , ()=>console.log(`Server running on ${port}`))
+        app.listen(port , "172.20.10.4", ()=>console.log(`Server running on ${port}`))
     })
     .catch((err)=>console.log(err))
 

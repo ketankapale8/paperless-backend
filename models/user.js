@@ -18,7 +18,32 @@ const userSchema = mongoose.Schema({
         required: false
     },
     id:{
-        type:String
+        type:String,
+        required : true
+    },
+    address : {
+        type: String,
+        required: false
+    },
+    state : {
+        type: String,
+        required: false
+    },
+    country : {
+        type: String,
+        required: false
+    },
+    aadhaar : {
+        type: String,
+        required: false
+    },
+    mob : {
+        type: Number,
+        required: false
+    },
+    alt_mob : {
+        type: Number,
+        required: false
     },
     cartItems: []
 

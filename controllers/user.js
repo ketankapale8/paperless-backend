@@ -67,6 +67,36 @@ export const allUsers = async (req , res) =>{
   }
 }
 
+//updating single signedin user //
+
+export const updateUser = async (req , res) =>{
+  const {id }= req.params;
+  const {email , name , address , state , country , aadhaar , mob , alt_mob} = req.body;
+  try{
+    const findUser = await userModal.findById({_id : id});
+    if(findUser){
+      const updateUser = ({
+          email ,
+          name,
+          address , 
+          state, 
+          country,
+          aadhaar , 
+          mob,
+          alt_mob,
+          _id : id
+      })
+
+      userModal.findByIdAndUpdate(updateUser , id , {new : true})
+
+      res.status(201).json({'UserUpdated' : updateUser})
+    }
+
+  }catch(err){
+    res.status(404).json({message : "Something went wrong."})
+    console.log(err)
+  }
+}
 
 
 

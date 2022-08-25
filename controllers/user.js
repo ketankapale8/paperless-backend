@@ -7,7 +7,7 @@ const secret = "test";
 export const signup = async (req, res) => {
   const { email, password, firstName, lastName } = req.body;
   try {
-    const oldUser = await userModal.findOne({ email });
+    const oldUser = await userModal.findOne({email});
     if (oldUser) {
       return res.status(400).json({ message: "Existing user" });
     }
@@ -26,7 +26,7 @@ export const signup = async (req, res) => {
     );
     res.status(201).json({ result, token });
   } catch (err) {
-    res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ err });
     console.log(err);
   }
 };

@@ -13,7 +13,7 @@ const cartSchema = mongoose.Schema({
             },
     
         pos : {
-            type : Object,
+            type : String,
         },
         
         itemName : {

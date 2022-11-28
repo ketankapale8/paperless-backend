@@ -32,7 +32,7 @@ export const addCart = async (req , res) => {
     }
 }
 
-// get all carts
+// get all carts dataaa ///
 
 export const getAllCarts = async (req, res) => {
   try {

@@ -19,7 +19,7 @@ const userCartSchema = mongoose.Schema({
                     type : String,
                     require : true
                 },
-                qty : {
+            qty : {
                     type : String,
                     require : true
                 },

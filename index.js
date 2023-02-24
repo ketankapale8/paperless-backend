@@ -35,6 +35,7 @@ app.use("/users" , usercartRouter);
 app.use("/users/allcarts" , storeFilter);
 
 // app.get('https://frail-outerwear-fish.cyclic.app/api/v1/gettokens', (req , res)=>{
+//     console.log(res)
 // })
 
 const message = {
@@ -49,7 +50,7 @@ admin.messaging().send(message)
     .then(resp=>{
         console.log('success' , resp)
     })
-    .catch(err=> console.log)
+    .catch(err=> console.log(err))
     
 
 
